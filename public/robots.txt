@@ -1,0 +1,22 @@
+# robots.txt for Borderless Maps
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Optional: specify sitemap location for better indexing
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Optional: throttle aggressive bots if needed
+# Crawl-delay: 10
