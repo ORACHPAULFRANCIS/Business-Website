@@ -3,15 +3,15 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "/Business-Website/", // This is critical
-  server: {
-    host: "::",
-    port: 8080,
-  },
+  base: "/Business-Website/", // 👈 Crucial for GitHub Pages
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  server: {
+    host: "::",
+    port: 8080,
   },
 });
