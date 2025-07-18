@@ -1,0 +1,134 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 28 25% 97%;
+    --foreground: 20 14% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 4%;
+
+    --primary: 142 62% 25%;
+    --primary-foreground: 28 25% 97%;
+
+    --secondary: 30 25% 90%;
+    --secondary-foreground: 20 14% 11%;
+
+    --muted: 30 25% 94%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 200 75% 35%;
+    --accent-foreground: 28 25% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 25% 85%;
+    --input: 30 25% 85%;
+    --ring: 142 62% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for the African spatial theme */
+    --earth-brown: 30 45% 35%;
+    --savanna-gold: 45 65% 55%;
+    --deep-forest: 142 62% 20%;
+    --sky-blue: 200 75% 45%;
+    --sunset-orange: 25 75% 55%;
+    --map-grid: 200 15% 85%;
+  }
+
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 28 25% 97%;
+
+    --card: 20 14% 6%;
+    --card-foreground: 28 25% 97%;
+
+    --popover: 20 14% 6%;
+    --popover-foreground: 28 25% 97%;
+
+    --primary: 142 62% 35%;
+    --primary-foreground: 20 14% 4%;
+
+    --secondary: 25 10% 15%;
+    --secondary-foreground: 28 25% 97%;
+
+    --muted: 25 10% 12%;
+    --muted-foreground: 25 5% 65%;
+
+    --accent: 200 75% 45%;
+    --accent-foreground: 20 14% 4%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 10% 18%;
+    --input: 25 10% 18%;
+    --ring: 142 62% 35%;
+
+    --earth-brown: 30 45% 45%;
+    --savanna-gold: 45 65% 65%;
+    --deep-forest: 142 62% 30%;
+    --sky-blue: 200 75% 55%;
+    --sunset-orange: 25 75% 65%;
+    --map-grid: 200 15% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom animations for map-inspired elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6); }
+}
+
+@keyframes grid-fade {
+  0% { opacity: 0; }
+  100% { opacity: 0.1; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-grid-fade {
+  animation: grid-fade 2s ease-in-out forwards;
+}
+
+/* Map grid pattern background */
+.map-grid-bg {
+  background-image: 
+    linear-gradient(hsl(var(--map-grid)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--map-grid)) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
